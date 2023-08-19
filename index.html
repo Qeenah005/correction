@@ -15,10 +15,57 @@
 
 
     <style>
+         @media screen and (max-width:414px) {
+            .on {
+                overflow-x: hidden;
+            }
+
+            .na{
+                margin-left: -10%;
+            }
+
+            .mynumber {
+                width: 80%;
+            }
+
+            .c {
+
+                margin-left: 1%;
+                width: 97%;
+                padding-top: 300px;
+
+            }
+
+            .ca {
+                margin-top: 20%;
+                margin-left: 10%;
+            }
+
+            .cal {
+                margin-top: 10%;
+                margin-left: -5%;
+                width: 92%;
+            }
+
+            .dev {
+                margin-left: -9%;
+            }
+
+            .number{
+                margin-left: 12%;
+            }
+
+            .var{
+                margin-top: 180px;
+            }
+
+        }
+
         @media screen and (min-width:768px) {
-            .pro2{
+            .pro2 {
                 display: none;
             }
+
             .var {
                 height: 535px;
             }
@@ -45,6 +92,7 @@
 
             .mynumber {
                 margin-left: 15%;
+                width: 400px;
             }
 
             .jav {
@@ -60,13 +108,12 @@
 
                 margin-left: 15%;
                 width: 97%;
+                
             }
 
             .ca {
                 margin-top: 10%;
                 margin-left: 5%;
-
-
             }
 
             .cal {
@@ -81,7 +128,7 @@
         }
 
         @media screen and (max-width:768px) {
-            .pro{
+            .pro {
                 display: none;
             }
 
@@ -196,7 +243,7 @@
             }
 
             .c {
-                margin-top: 140%;
+                margin-top: 130%;
                 margin-left: 29%;
                 width: 85%;
             }
@@ -265,14 +312,15 @@
         .pro {
             animation: pro 5s infinite backwards reverse ease-in;
             width: 30%;
-         
+
         }
+
         .pro2 {
             animation: pro 5s infinite backwards reverse ease-in;
             width: 30%;
-            
+
         }
-        
+
         body {
             font-family: Arial, sans-serif;
         }
@@ -337,13 +385,12 @@
 
 <body class="on">
 
-
     <nav class="navbar navbar-expand-lg navbar-light fixed-top " style="background: white; ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"
                 style=" font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #0D5C91; font-size: 23px;">Javascript
                 Project</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            <button class="navbar-toggler na" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -418,7 +465,7 @@
     </nav>
 
     <div>
-        <img class="background" src="img/project.avif" width="100%" height="600px">
+        <img class="background" src="img/project.png" width="100%" height="600px">
         <div class="top">
             <p
                 style="padding-top:10%;margin-left: 10%;margin-top:-3%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 18px;">
@@ -740,7 +787,7 @@
                                 Start Guessing......
                             </h3> <br>
                             <input class="mynumber" placeholder="guess my number between 1 and 20"
-                                style="text-align: center; padding: 5px; width: 400px; font-size: 24px;background:#cbd3d4; border: none;"><br><br><br>
+                                style="text-align: center; padding: 5px; font-size: 24px;background:#cbd3d4; border: none;"><br><br><br>
 
                             <h2 class="number"
                                 style="left: 15px; position: relative; text-align: center; font-family: 'Times New Roman', Times, serif;">
@@ -777,7 +824,7 @@
                                     <h3>Available Subjects</h3> <br>
                                     <thead>
                                         <tr>
-                                            <th>Subject</th> 
+                                            <th>Subject</th>
                                             <th>Select</th>
                                         </tr>
                                     </thead>
@@ -805,19 +852,36 @@
     </div><br><br><br>
 
     <center>
-        <div class="col-lg-6">
-            <div class="shadow age" id="age">
-                <h2 style="background: #63aaa2; padding: 2%; color: black; font-family: 'Times New Roman', Times, serif;">
-                    To-Do-List</h2><br>
-                <div style="background: white;  height: 250px; ">
-                    <input type="text" id="taskInput" placeholder="Add a new task">
-                    <button id="addTask">Add</button> <br>
-                    <ul id="taskList"></ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="shadow age" id="age">
+                        <h2
+                            style="background: #63aaa2; padding: 2%; color: black; font-family: 'Times New Roman', Times, serif;">
+                            To-Do-List</h2><br>
+                        <div style="background: white;  height: 250px; ">
+                            <input type="text" id="taskInput" placeholder="Add a new task">
+                            <button id="addTask">Add</button> <br>
+                            <ul id="taskList"></ul>
 
+                        </div>
+                    </div>
+                </div> <br><br><br>
+
+                <div class="col-lg-6">
+                    <div class="shadow age" id="cou">
+                        <h2 id="coun"
+                            style="background: #DDBEAA; padding: 2%; color: black; font-family: 'Times New Roman', Times, serif;">
+                            Countdown to Christmas</h2> <br> 
+                        <h2 onload="xma()" id="tun" style="background: white; height: 250px;"></h2>
+                    </div>
                 </div>
             </div>
-        </div> <br><br><br>
-    </center>
+        </div>
+
+
+
+    </center> <br><br><br>
 
     <div style="background: #DDBEAA; padding-top: 2%; color: black;padding-bottom: 1%;">
         <div class="container-fluid">
@@ -888,6 +952,28 @@
 
 
             <script>
+                // Countdown
+
+                let countdown = new Date(`December, 25, 2023`).getTime();
+
+                function xma() {
+                    let now = new Date().getTime();
+                    let distance = countdown - now;
+                    let days = Math.floor(distance / (24 * 60 * 60 * 1000));
+                    let hours = Math.floor(distance % (24 * 60 * 60 * 1000) / (60 * 60 * 1000));
+                    let minutes = Math.floor(distance % (60 * 60 * 1000) / (60 * 1000));
+                    let seconds = Math.floor(distance % (60 * 1000) / (1000));
+                    if (distance == 0) {
+                        clearInterval(qeens);
+                        document.querySelector(`#coun`).innerHTML = `MERRY CHRISTMAS`;
+                        document.querySelector(`body`).style.backgroundColor = `green`
+                    }
+                    document.querySelector(`#tun`).innerHTML = `${days}D : ${hours}H : ${minutes}M : ${seconds}S`
+                }
+                xma()
+                let qeens = setInterval(xma, 1000)
+
+
                 // Greeting
                 function wumi() {
                     let gre = document.getElementById('greet').innerHTML;
@@ -988,14 +1074,11 @@
 
 
 
-                //countdown
+                //Digitaltime
                 function qeenah() {
                     let d = new Date()
-                    let Months = [`january`, `feburary`, `march`, `april`, `may`, `june`, `july`, `august`,
-                        `septmber`,
-                        `october`,
-                        `november`, `december`
-                    ];
+                    let Months = [`January`, `Feburary`, `March`, `April`, `May`, `June`, `July`, `August`,
+                        `Septmber`, `October`, `November`, `December`];
                     let ho = d.getHours();
                     let mi = d.getMinutes();
                     let sec = d.getSeconds();
@@ -1157,7 +1240,7 @@
                 })
 
                 // SelectionSubject
-                let availableSubject = [ `English`, `Mathematics`, `Chemistry`, `Physics`, `Biology`,
+                let availableSubject = [`English`, `Mathematics`, `Chemistry`, `Physics`, `Biology`,
                     `Civics`, `Economics`, `Yoruba`, `Marketing`, `Geography`,
                 ];
 
@@ -1255,12 +1338,11 @@
                         startCountdown(countdownSpan);
 
                         li.innerHTML = `
-      <span>${taskText}</span>
-      <span class="time">${formattedTime}</span>
-      <button class="edit">Edit</button>
-      <button class="done">Done</button>
-      <button class="delete">Delete</button>
-    `;
+                      <span>${taskText}</span>
+                      <span class="time">${formattedTime}</span>
+                      <button class="edit">Edit</button>
+                      <button class="done">Done</button>
+                      <button class="delete">Delete</button>`;
 
                         li.appendChild(countdownSpan);
 
