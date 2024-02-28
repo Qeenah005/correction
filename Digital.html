@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .time {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        color: white;
+        font-size: 40px;
+        margin-top: 10%;
+
+
+    }
+
+    body {
+        background-image: url(img/nature.webp);
+        background-position: center;
+        background-clip: content-box;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+
+    @media screen and (max-width:768px){
+        .all{
+            margin-top: 50%;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="all">
+        <div style="margin-top: 10%; font-size:20px;">
+            <h1>Today's Date and Time</h1>
+        </div>
+
+        <div>
+            <div class=" time">
+                <span id="hou"></span>
+                <span>:</span>
+
+                <span id="min"></span>
+                <span>:</span>
+
+                <span id="secc"></span>
+                <span>:</span>
+                <span style="background: black;" id="changee"></span>
+            </div>
+
+            <h1 onload="qeenah()" id="tunde" style="text-align:center; color: white;">Get todays's date and time</h1>
+        </div>
+
+    </div>
+
+
+    <script>
+        let pet = document.getElementById('#hou');
+        let joy = document.getElementById('#min');
+        let joh = document.getElementById('#secc');
+        let ch = document.getElementById('changee');
+        let Months = [`January`, `Feburary`, `March`, `April`, `May`, `June`, `July`, `August`,
+            `Septmber`, `October`, `November`, `December`
+        ];
+        let day = [`Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`, ];
+
+        function qeenah() {
+            let d = new Date()
+            let ho = d.getHours();
+            let mi = d.getMinutes();
+            let sec = d.getSeconds();
+            let da = d.getDate();
+            let days = d.getDay();
+            let year = d.getFullYear();
+
+            if (ho >= 12) {
+                ch.innerHTML = 'PM';
+            } else {
+                ch.innerHTML = 'AM';
+            }
+            if (ho > 12) {
+                ho = ho - 12;
+            }
+            if (ho > 9) {
+                ho = ho = `${ho}`;
+            } else {
+                ho = `${0}` + `${ho}`;
+            }
+            if (da < 10) {
+                da = `0` + da;
+            }
+            if (mi < 10) {
+                mi = `0` + mi;
+            }
+            if (sec < 10) {
+                sec = `0` + sec;
+            }
+
+            hou.innerHTML = ho;
+            min.innerHTML = mi;
+            secc.innerHTML = sec;
+            document.querySelector(`#tunde`).innerHTML = `
+                    ${day[days]}, ${Months[d.getMonth()]} ${da}, ${year}.`
+        }
+        let kira = setInterval(qeenah, 1000)
+    </script>
+</body>
+
+</html>

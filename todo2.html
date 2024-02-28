@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="me">
+        <h1>Add Subject</h1>
+        <input type="text" id="qeenah" placeholder="subject...">
+        <button id="addsub" style="cursor: pointer;">+ Add</button>
+    </div>
+    <ul id="subject"></ul><br>
+
+
+
+
+
+
+    <script>
+        function addNew() {
+            let a = document.getElementById('qeenah').value;
+            let b = document.getElementById('subject');
+            let c = document.createElement('li');
+            b.appendChild(c);
+            c.innerHTML = a;
+
+
+            let currentTime = new Date()
+            let ho = currentTime.getHours();
+            let mi = currentTime.getMinutes();
+            let sec = currentTime.getSeconds();
+
+            if (sec >= 12) {
+                sec = 'PM';
+            } else {
+                sec = 'AM';
+            }
+            if (ho > 12) {
+                ho = ho - 12;
+            }
+            if (ho > 9) {
+                ho = ho = `${ho}`;
+            } else {
+                ho = `${0}` + `${ho}`;
+            }
+            
+            if (mi < 10) {
+                mi = `0` + mi;
+            }
+            if (sec < 10) {
+                sec = `0` + sec;
+            }
+
+            tim = ` ${ho} : ${mi} ${sec}`;
+
+
+            let yu = document.createElement('span');
+            let mee = document.createTextNode(tim);
+            yu.appendChild(mee);
+            c.appendChild(yu);
+
+
+
+            let r = document.createElement('span')
+            let s = document.createTextNode('\u2714')
+            r.appendChild(s);
+            r.title = 'mark done';
+            r.style.backgroundColor = 'green'
+            r.style.color = 'white'
+            r.style.cursor = 'pointer'
+            r.className = 'done'
+
+            c.appendChild(r)
+
+            let q = document.getElementsByClassName('done')
+            let z;
+            for (z = 0; z < q.length; z++) {
+                q[z].onclick = function () {
+                    this.parentNode.style.textDecoration = 'line-through'
+                }
+            }
+
+            let x = document.createElement('span')
+            let y = document.createTextNode('\u00d7')
+            x.appendChild(y)
+            x.title = 'close'
+            x.style.backgroundColor = 'red'
+            x.style.color = 'white'
+            x.style.cursor = 'pointer'
+            x.className = 'close'
+
+            c.appendChild(x)
+            let f = document.getElementsByClassName('close')
+
+            let i;
+            for (i = 0; i < f.length; i++) {
+                f[i].onclick = function () {
+                    this.parentNode.style.display = 'none'
+                }
+
+            }
+
+            let countdown = document.createElement('span');
+            countdown.textContent = '00:00';
+            startCounting(countdown);
+            c.appendChild(countdown)
+
+            function startCounting(countdownElement) {
+                let targetTime = new Date().getTime()
+
+                function updateCounting() {
+                    let currentTime = new Date().getTime();
+                    let we = targetTime - currentTime;
+
+                    if (we <= 0) {
+                        countdownElement.textContent = '00:00';
+                    } else {
+                        let minute = Math.floor((weydey % (1000 * 60 * 60)) / (1000 * 60));
+                        let second = Math.floor((weydey % (1000 * 60)) / 1000);
+
+                        countdownElement.textContent = `${minute}:${second}`;
+                    }
+                }
+
+                updateCounting();
+                setInterval(updateCounting, 1000);
+            }
+
+
+            document.getElementById('qeenah').value = '';
+            document.getElementById('qeenah').focus();
+        }
+
+        const kirah = function () {
+            if (!document.getElementById('qeenah').value == '') {
+                addNew()
+            } else {
+                alert('please add value')
+            }
+
+        }
+        let addbtn = document.getElementById('addsub')
+        addbtn.addEventListener('click', kirah);
+
+        document.addEventListener('keydown', function (e) {
+            console.log(e)
+            if (e.key === 'Enter' && !document.getElementById('qeenah').value == '') {
+                addNew()
+            }
+        })
+    </script>
+</body>
+
+</html>
